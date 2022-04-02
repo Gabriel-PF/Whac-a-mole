@@ -16,5 +16,9 @@ let countdown;
 // Custom function to pick a random hole - No mole should pick up twice from the same hole.
 
 function pickRandomHole(holes) {
-    const randomHole = Math.floor
+    const randomHole = Math.floor(Math.random() * holes.length); 
+    const hole = holes[randomHole]; 
+    if (hole === lastHole) {           // 
+        return pickRandomHole(hole);
+    }
 }
