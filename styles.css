@@ -17,8 +17,8 @@ body {
     background-image: url('background.jpg');
     overflow: hidden;
 }
-.score { /* centering score in middle of wrapper element  */
-    font-size: 150px;
+.score { 
+    font-size: 120px;
     color: #a5a5ec;
     position: absolute;
     top:10%; 
