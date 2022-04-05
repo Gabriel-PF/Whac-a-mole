@@ -8,9 +8,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<audio autoplay loop id="audio">
+    <source src="assets/sound/theme.mp3">
+</audio>
 </head>
 <body>
-    <div class="wrapper">
+    <div id="home" class="home">
+        <h1>
+            WHAC-A-MOLE!
+        </h1>
+        <h3>
+            Are you ready?
+        </h3>
+        <div>
+            <button onclick="toggle(); play();" class="homeButton">
+                Double click to whack moles!
+            </button>
+        </div>
+    </div>
+
+
+    <div id="main" class= "wrapper">
         <div class="score">0</div>
         <div class="countdown">TIME</div>
         <button class="startButton">Start!</button>
