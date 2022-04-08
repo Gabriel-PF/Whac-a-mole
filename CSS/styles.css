@@ -22,6 +22,28 @@ border: 3px solid #21c92f;
     color: #ffffff;
     
 }
+
+h1 {
+    animation: titlebump 0.5s ease infinite
+    alternate; 
+}
+
+@keyframes titlebump
+{
+    from  
+     {
+        transform: translate(15px);
+     } 
+     to
+     {
+        transform: translate(-15px);
+     } 
+}
+
+h4 {
+    color: #15959e;
+
+}
 .wrapper {
     border: 3px solid #21c92f;
     width: 960px;
@@ -33,32 +55,69 @@ border: 3px solid #21c92f;
     background-image: url('../assets/images/background.jpg');
     overflow: hidden;
     display: none;
+    cursor: none;
+    
 }
 .score { 
     font-size: 120px;
-    color: #045b38;
+    color: #3f8388;
     position: absolute;
-    top:10%; 
+    top:84%; 
     left: 10%;
     transform: translate(-50%, -50%);
     width: 160px;
     height: 60px;
     text-align: center;
+    animation: titlebump 0.5s ease infinite
+    alternate; 
 }
+
+@keyframes titlebump
+{
+    from  
+     {
+        transform: translate(15px);
+     } 
+     to
+     {
+        transform: translate(-15px);
+     } 
+}
+
 .countdown {
-    top: 490px;
+    top: 500px;
     width: 100%;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
-    color: #045b38;
+    color: #c18409;
+    z-index: 2;
+    
 }
 
 .homeButton {
     position: absolute;
-    bottom: 10px;
+    bottom: 1px;
     left: 50%;
     transform: translate(-50%, 0);
-    background: rgb(71, 116, 5);
+    background: #3f8388;
+    color: white;
+    padding: 20px 50px;
+    border-radius: 40px;
+    z-index: 200;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: 'Press Start 2P', cursive;
+    font-family: 'VT323', monospace;
+    font-size: 26px;
+}
+
+.startButton { 
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: #3f8388;
     color: white;
     padding: 20px 50px;
     border-radius: 40px;
@@ -71,30 +130,26 @@ border: 3px solid #21c92f;
     font-size: 30px;
 }
 
-.startButton { 
+
+.hammer {
     position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    background: rgb(71, 116, 5);
-    color: white;
-    padding: 20px 50px;
-    border-radius: 40px;
-    z-index: 200;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    font-family: 'Press Start 2P', cursive;
-    font-family: 'VT323', monospace;
-    font-size: 30px;
+    z-index: 1000;
+    height: 125px;
+    top: 0;
+    left: 0; 
+    transform: translate(-655px, -605px);
+    pointer-events: none;
+
 }
+
 .game {
     width: 600px;
     height: 400px;
     margin: 70px auto;
-    z-index: 200;
+    z-index: 2000;
     display: flex;
     flex-wrap: wrap;
+    
 }
 .hole {
     flex: 1 0 33.33%;

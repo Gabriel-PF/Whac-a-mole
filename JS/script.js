@@ -7,14 +7,15 @@ const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
 const countdownBoard = document.querySelector('.countdown');
 const startButton = document.querySelector('.startButton');
+const cursor = document.querySelector('.hammer');
 
 //Audio
-
-//const audio = document.getElementById("background-music");
+let ouch = new Audio("assets/sound/ouch.mp3")
+let hammersound = new Audio("assets/sound/whoosh.flac");
 
 // Music setup
-audio.volume = 0.03;
-
+audio.volume = 0.05;
+hammersound.volume = 0.00;
 
 // Setting the variables 
 let lastHole;
@@ -22,6 +23,8 @@ let timeUp = false;
 let timeLimit = 20000;
 let score = 0;
 let countdown;
+
+// Audio function
 
 function play() {
     let audio = document.getElementById("audio");
@@ -64,6 +67,7 @@ function popOut(){
     }, time);
 }
 
+// Start Game function and custom score board message 
 
 function startGame(){
     countdown = timeLimit/1000;
@@ -80,10 +84,24 @@ function startGame(){
     let startCountdown = setInterval(function(){
         countdown -= 1;
         countdownBoard.textContent = countdown;
-        if (countdown < 0) {
+        if (countdown <= 20) {
+            hammersound.volume = 0.06;
+        } if  (countdown < 0) {
             countdown = 0;
             clearInterval(startCountdown);
-            countdownBoard.textContent = 'Times UP!';
+            if (countdown === 0 && score <= 6) {
+            countdownBoard.textContent = `How am I suppose to take you seriously? You're a JOKE! GET OUT OF HERE!`;
+        } else if (countdown === 0 && score <= 11) {
+            countdownBoard.textContent = 'Oh what a loser! Step up your game son! PLAY IT AGAIN!';
+        } else if (countdown === 0 && score <= 15) {
+            countdownBoard.textContent = `Should I be impressed by that? Mehhhh average Joe, Fool take a hike! `;
+        } else if (countdown === 0 && score <= 16) { 
+            countdownBoard.textContent = `DAMN SON! Now we are talking, you had my curiosity, now you have my attention.`; 
+        } else if (countdown === 0 && score <= 17) {
+            countdownBoard.textContent = `Reflexes of a wild TIGER! Sky is the limit for you!!!`;
+        } else if (countdown === 0 && score >= 18) {
+            countdownBoard.textContent = `SAVAGE, GOD AMONGST MEN, please click the images of mountains to prove you're human!`;
+        } 
 
         }
     }, 1000);
@@ -96,10 +114,34 @@ startButton.onclick = function () {
     startGame();
 }
 
+// cursor and cursor animation 
+
+window.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.pageX - 200 + "px"; 
+    cursor.style.top = e.pageY - 230 + "px";
+});
+
+window.addEventListener("click", (e) => {
+cursor.style.transform = "rotateZ(-50deg) rotateY(-180deg)";
+    hammersound.play();
+    hammersound.currentTime = 0;
+setTimeout(() => {
+    cursor.style.transform = "rotateZ(0deg) rotateY(-180deg)"
+}, 90);
+});
 
 
+// not working 
+function func(){
+    document.getElementById("wackButton").addEventListener('click', function(){
+          this.textContent = "Restart";
+    });
+}
 
-function whack(e){   // Every time click mole, increase score variable by 1. 
+
+// whack funtion and animation when mole is hit
+
+function whack(e){   // Every time mole is clicked, increase score variable by 1. 
     score++;
     this.style.backgroundImage = 'url("assets/images/hit.png")';  
     this.style.pointerEvents = 'none';                               // "this" refer element clicked 
@@ -109,9 +151,10 @@ function whack(e){   // Every time click mole, increase score variable by 1.
 
     }, 800);
     scoreBoard.textContent = score;
-    
-
 }
-moles.forEach(mole => mole.addEventListener('click', whack));  
 
+
+
+moles.forEach(mole => mole.addEventListener('click', whack, ouch.play()));  
+ 
 

@@ -13,13 +13,15 @@
 </audio>
 </head>
 <body>
+    
     <div id="home" class="home">
         <h1>
             WHAC-A-MOLE!
         </h1>
-        <h3>
+        <h4>
+            Get these goddamn moles!<br>
             Are you ready?
-        </h3>
+        </h4>
         <div>
             <button onclick="toggle(); play();" class="homeButton">
                 Double click to whack moles!
@@ -29,9 +31,11 @@
 
 
     <div id="main" class= "wrapper">
+        <img src="assets/images/hammer.png" alt="hammer" class = "hammer">
         <div class="score">0</div>
         <div class="countdown">TIME</div>
-        <button class="startButton">Start!</button>
+        <button id="wackButton" type="button" class="startButton" value="Start">Start!</button>
+        
 
         <!-- Main interactive area of the game -->
         <div class="game">
