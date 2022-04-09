@@ -90,13 +90,13 @@ function startGame(){
             countdown = 0;
             clearInterval(startCountdown);
             if (countdown === 0 && score <= 6) {
-            countdownBoard.textContent = `How am I suppose to take you seriously? You're a JOKE! GET OUT OF HERE!`;
+            countdownBoard.textContent = `What is this, amateur hour? You're a JOKE! GET OUT OF HERE!`;
         } else if (countdown === 0 && score <= 11) {
-            countdownBoard.textContent = 'Oh what a loser! Step up your game son! PLAY IT AGAIN!';
+            countdownBoard.textContent = 'Oh, what a loser! Step up your game son! PLAY IT AGAIN!';
         } else if (countdown === 0 && score <= 15) {
-            countdownBoard.textContent = `Should I be impressed by that? Mehhhh average Joe, Fool take a hike! `;
+            countdownBoard.textContent = `Should I be impressed by that? Mehhhh average Joe, Go take a hike! `;
         } else if (countdown === 0 && score <= 16) { 
-            countdownBoard.textContent = `DAMN SON! Now we are talking, you had my curiosity, now you have my attention.`; 
+            countdownBoard.textContent = `DAAAAAAMN! Now we're talking, you had my curiosity, now you have my attention.`; 
         } else if (countdown === 0 && score <= 17) {
             countdownBoard.textContent = `Reflexes of a wild TIGER! Sky is the limit for you!!!`;
         } else if (countdown === 0 && score >= 18) {
@@ -132,11 +132,11 @@ setTimeout(() => {
 
 
 // not working 
-function func(){
+/*function func(){
     document.getElementById("wackButton").addEventListener('click', function(){
           this.textContent = "Restart";
     });
-}
+}*/
 
 
 // whack funtion and animation when mole is hit
