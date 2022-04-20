@@ -7,13 +7,16 @@ Description:
 In this version I tried to emulate the functionalities of the game, using the powers of the JavaScript to create the logic behind it. 
 
 MVP 
-Game has six holes in which the moles pop up randomly, each time they appear, player should move the mouse and try to hit it, this game test your hand-eye coordination. You are your own adversary try to beat your previously score.
+Game has six holes in which the moles pop up randomly, each time they appear, player should move the mouse and try to hit it, this game test your hand-eye coordination. You are your own adversary try to beat your previous score.
 Depending on your score a different message will appear when the time is up.
+
+
+Able to use a lot of fundamentals we've learn, 
 
 
 Backlog
 add scoreboard
-Ability to start the game on increased dificulty lvl
+Ability change dificulty lvl
 Build "Game Over" screen
 Fix some bugs 
 Improve the design

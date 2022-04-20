@@ -137,7 +137,7 @@ h4 {
     height: 125px;
     top: 0;
     left: 0; 
-    transform: translate(-655px, -605px);
+    transform: translate(-50%, -50%);
     pointer-events: none;
 
 }

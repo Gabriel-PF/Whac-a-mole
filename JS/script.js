@@ -10,7 +10,7 @@ const startButton = document.querySelector('.startButton');
 const cursor = document.querySelector('.hammer');
 
 //Audio
-let ouch = new Audio("assets/sound/ouch.mp3")
+//let ouch = new Audio("assets/sound/ouch.mp3") still to be implemented 
 let hammersound = new Audio("assets/sound/whoosh.flac");
 
 // Music setup
@@ -117,8 +117,8 @@ startButton.onclick = function () {
 // cursor and cursor animation 
 
 window.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.pageX - 200 + "px"; 
-    cursor.style.top = e.pageY - 230 + "px";
+    cursor.style.left = e.pageX - 320 + "px"; 
+    cursor.style.top = e.pageY - 100 + "px";
 });
 
 window.addEventListener("click", (e) => {
@@ -139,7 +139,7 @@ setTimeout(() => {
 }*/
 
 
-// whack funtion and animation when mole is hit
+// whack function and animation when mole is hit
 
 function whack(e){   // Every time mole is clicked, increase score variable by 1. 
     score++;
@@ -155,6 +155,7 @@ function whack(e){   // Every time mole is clicked, increase score variable by 1
 
 
 
-moles.forEach(mole => mole.addEventListener('click', whack, ouch.play()));  
+moles.forEach(mole => mole.addEventListener('click', whack));  
  
 
+// ouch.play() to be implemeted 
