@@ -116,9 +116,13 @@ startButton.onclick = function () {
 
 // cursor and cursor animation 
 
+
 window.addEventListener("mousemove", (e) => {
     cursor.style.left = e.pageX - 320 + "px"; 
     cursor.style.top = e.pageY - 100 + "px";
+    
+    hammer.style.left = e.pageX - hammer.offsetWidth / 2 + "px";
+    hammer.style.top = e.pageY - hammer.offsetHeight / 2 + "px";
 });
 
 window.addEventListener("click", (e) => {
