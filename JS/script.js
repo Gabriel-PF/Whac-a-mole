@@ -123,10 +123,9 @@ window.addEventListener("mousemove", (e) => {
     const hammer = document.querySelector(".hammer");
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
-    
+
     cursor.style.left = (e.pageX / windowWidth * 100) + "%";
     cursor.style.top = (e.pageY / windowHeight * 100) + "%";
-    
     hammer.style.left = (e.pageX / windowWidth * 100) + "%";
     hammer.style.top = (e.pageY / windowHeight * 100) + "%";
 });
