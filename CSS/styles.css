@@ -132,11 +132,11 @@ h4 {
 
 
 .hammer {
-    position: absolute;
+    position: fixed;
     z-index: 1000;
     height: 12.5%;
-    top: 0;
-    left: 0;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
 }

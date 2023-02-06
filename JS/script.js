@@ -10,7 +10,7 @@ const startButton = document.querySelector('.startButton');
 
 
 //Audio
-//let ouch = new Audio("assets/sound/ouch.mp3") still to be implemented 
+let ouch = new Audio("assets/sound/ouch.mp3");
 let hammersound = new Audio("assets/sound/whoosh.flac");
 
 // Music setup
@@ -140,13 +140,9 @@ setTimeout(() => {
 });
 
 
-// not working 
-/*function func(){
-    document.getElementById("wackButton").addEventListener('click', function(){
-          this.textContent = "Restart";
-    });
-}*/
-
+document.getElementById("wackButton").addEventListener('click', function(){
+    this.textContent = "Restart";
+});
 
 // whack function and animation when mole is hit
 
@@ -162,9 +158,13 @@ function whack(e){   // Every time mole is clicked, increase score variable by 1
     scoreBoard.textContent = score;
 }
 
+moles.forEach(mole => mole.addEventListener('click', function(){
+    ouch.play();
+    if (!timeUp){
+        score++;
+        scoreBoard.textContent = score;
+        this.parentNode.classList.remove('up');
+    }
+}));
 
 
-moles.forEach(mole => mole.addEventListener('click', whack));  
- 
-
-// ouch.play() to be implemeted 
