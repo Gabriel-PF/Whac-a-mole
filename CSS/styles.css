@@ -134,9 +134,9 @@ h4 {
 .hammer {
     position: absolute;
     z-index: 1000;
-    height: 125px;
+    height: 12.5%;
     top: 0;
-    left: 0; 
+    left: 0;
     transform: translate(-50%, -50%);
     pointer-events: none;
 }

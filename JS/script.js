@@ -7,7 +7,7 @@ const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
 const countdownBoard = document.querySelector('.countdown');
 const startButton = document.querySelector('.startButton');
-const cursor = document.querySelector('.hammer');
+
 
 //Audio
 //let ouch = new Audio("assets/sound/ouch.mp3") still to be implemented 
@@ -119,11 +119,16 @@ startButton.onclick = function () {
 
 
 window.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.pageX - 320 + "px"; 
-    cursor.style.top = e.pageY - 100 + "px";
+    const cursor = document.querySelector(".cursor");
+    const hammer = document.querySelector(".hammer");
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
     
-    hammer.style.left = e.pageX - hammer.offsetWidth / 2 + "px";
-    hammer.style.top = e.pageY - hammer.offsetHeight / 2 + "px";
+    cursor.style.left = (e.pageX / windowWidth * 100) + "%";
+    cursor.style.top = (e.pageY / windowHeight * 100) + "%";
+    
+    hammer.style.left = (e.pageX / windowWidth * 100) + "%";
+    hammer.style.top = (e.pageY / windowHeight * 100) + "%";
 });
 
 window.addEventListener("click", (e) => {
